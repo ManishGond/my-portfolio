@@ -1,13 +1,13 @@
-import { curve, heroBackground, robot } from "../assets";
-import Button from "./Button";
-import Section from "./Section";
-import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { heroIcons } from "../constants";
+import { curve, heroBackground, robot } from "../../assets";
+import Button from "../common/Button";
+import Section from "../common/Section";
+import { BackgroundCircles, BottomLine, Gradient } from "../design/Hero";
+import { heroIcons } from "../../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
-import Generating from "./Generating";
-import Notification from "./Notification";
-import CompanyLogos from "./CompanyLogos";
+import Generating from "../common/Generating";
+import Notification from "../common/Notification";
+import CompanyLogos from "../CompanyLogos";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -23,24 +23,40 @@ const Hero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
-            Explore the Possibilities of&nbsp;AI&nbsp;Chatting with {` `}
+            Hey, I'm{" "}
             <span className="inline-block relative">
-              Brainwave{" "}
+              <span className="px-1 rounded">@</span>
+              <a
+                href="https://github.com/manishgond"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-n-1 hover:text-color-1 transition-colors duration-200"
+              >
+                manishgond
+              </a>{" "}
               <img
                 src={curve}
-                className="absolute top-full left-0 w-full xl:-mt-2"
+                className="absolute top-full left-0 w-full xl:-mt-1"
                 width={624}
                 height={28}
                 alt="Curve"
+                style={{
+                  filter: "drop-shadow(0 0 2px rgba(172, 106, 255, 0.5))",
+                  background: "linear-gradient(90deg, #AC6AFF, #AC6AFF)",
+                  maskImage: `url(${curve})`,
+                  WebkitMaskImage: `url(${curve})`,
+                  maskSize: "cover",
+                  WebkitMaskSize: "cover",
+                }}
               />
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the power of AI within Brainwave. Upgrade your productivity
-            with Brainwave, the open AI chat app.
+            A full-stack developer passionate about creating interactive
+            applications and experiences on the web.
           </p>
-          <Button href="/pricing" white>
-            Get started
+          <Button href="#projects" className="text-lg px-8 py-4" white>
+            View My Work
           </Button>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
@@ -70,10 +86,7 @@ const Hero = () => {
                 </ScrollParallax>
 
                 <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                    title="Code generation"
-                  />
+                  <Notification className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[22rem] xl:flex" />
                 </ScrollParallax>
               </div>
             </div>
