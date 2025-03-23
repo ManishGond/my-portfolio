@@ -445,7 +445,7 @@ export const navigation = [
   },
   {
     id: "4",
-    title: "New account",
+    title: "Create account",
     url: "#signup",
     onlyMobile: true,
   },
